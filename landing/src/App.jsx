@@ -9,14 +9,13 @@ import Inbox from './sections/Inbox.jsx';
 import Plans from './sections/Plans.jsx';
 import Sync from './sections/Sync.jsx';
 import Team from './sections/Team.jsx';
-import BuiltIn from './sections/team/BuiltIn.jsx';
 import Thesis from './sections/Thesis.jsx';
 import Topbar from './sections/Topbar.jsx';
 import Work from './sections/Work.jsx';
 
 /* The page argues one thing in order: people and agents reach you in one place (hero, inbox),
-   why that place has to exist (thesis), what a team does in it (work, team), where
-   the agents come from (anywhere, any harness, the cloud), and last the developer's tools. */
+   why that place has to exist (thesis), what a team does in it (work, team), and last
+   where the agents come from (anywhere, any harness, the cloud). */
 export default function App() {
   // a layout effect, so the page zoom is set before any section's canvas reads it
   useLayoutEffect(startFit, []);
@@ -34,7 +33,6 @@ export default function App() {
       <Sync />
       <Plans />
       <Cloud />
-      <BuiltIn />
       <Get />
       <Footer />
     </>
