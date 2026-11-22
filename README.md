@@ -33,17 +33,16 @@ Then open http://localhost:8000. The page uses root paths (`/css/site.css`), so 
 
 ## How it deploys
 
-**Pushing to `main` does not deploy.** The Vercel project is linked through
-`.vercel/`, not through a GitHub integration, so a push updates the repository
-and leaves the live site on its previous build. Deploy from this folder:
+**Pushing to `main` deploys.** The Vercel project follows this repository
+through Vercel's GitHub app, so every push to `main`, a merged pull request
+included, goes live by itself. Merge only what is ready to be live.
 
-```
-vercel --prod
-```
+Any other branch or pull request gets a preview build, behind Vercel's sign-in.
+A pull request from a fork waits until someone on the Vercel team allows it.
 
-Measured on 2026-10-17: `main` was pushed with five new pages and agentbox.ac
-kept serving the 15 October build — every new URL a 404 — until `vercel --prod`
-ran. Check a real URL afterwards rather than trusting the push.
+Do not deploy by hand with `vercel --prod`. It uploads the folder as it is,
+files git ignores included, and the next push replaces it anyway. Check a real
+URL after a push rather than trusting it.
 
 The site is hosted on Vercel as a static project with no framework and no build command, served at **agentbox.ac**. `vercel.json` turns on clean URLs (`/privacy` serves `privacy.html`) and redirects `/download` to the newest Mac build:
 
