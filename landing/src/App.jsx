@@ -14,8 +14,8 @@ import Topbar from './sections/Topbar.jsx';
 import Work from './sections/Work.jsx';
 
 /* The page argues one thing in order: people and agents reach you in one place (hero, inbox),
-   why that place has to exist (thesis), what a team does in it (work, team), and last
-   where the agents come from (anywhere, any harness, the cloud). */
+   what a team does in it (work), why it is made for teams with agents (thesis), the team
+   itself (team), and last where the agents come from (anywhere, any harness, the cloud). */
 export default function App() {
   // a layout effect, so the page zoom is set before any section's canvas reads it
   useLayoutEffect(startFit, []);
@@ -27,8 +27,8 @@ export default function App() {
       <Topbar />
       <Hero />
       <Inbox />
-      <Thesis />
       <Work />
+      <Thesis />
       <Team />
       <Sync />
       <Plans />
