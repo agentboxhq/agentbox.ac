@@ -1,5 +1,7 @@
+import { useEffect, useRef } from 'react';
 import Button from '../components/Button.jsx';
 import Mark from '../components/Mark.jsx';
+import startBitmap from '../effects/bitmap.js';
 import { GITHUB_URL } from '../lib/links.js';
 
 const COLUMNS = [
@@ -9,6 +11,8 @@ const COLUMNS = [
 
 /* statement and links, a hairline, the wordmark edge to edge, a hairline, the small print */
 export default function Footer() {
+  const wm = useRef(null);
+  useEffect(() => startBitmap(wm.current), []);
   return (
     <footer className="foot">
       <div className="wrap top">
@@ -27,7 +31,7 @@ export default function Footer() {
         ))}
       </div>
       <div className="sep" />
-      <div className="wrap wm" aria-label="Agentbox"><Mark tone="ink" /><span>Agentbox</span></div>
+      <div ref={wm} className="wrap wm" aria-label="Agentbox"><span className="wmk"><Mark tone="ink" /><i /></span><span>Agentbox</span></div>
       <div className="sep" />
       <div className="wrap bar">
         <span>© 2026 Agentbox. Free and open source.</span>

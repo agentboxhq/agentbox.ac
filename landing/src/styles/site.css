@@ -475,11 +475,17 @@ section:not(.run) .shot *{animation-play-state:paused!important}
 .foot .sep{height:1px;margin:0 var(--rg,24px);background:rgba(255,255,255,.08)}
 .foot .top+.sep{margin-top:72px}
 .foot .wm{display:flex;align-items:center;gap:.12em;padding:48px 0 44px;font-size:min(243px,calc((100vw - 2 * var(--rg,40px) - 96px) / 4.95));font-weight:500;line-height:.8;letter-spacing:-0.055em;color:var(--color-ink)}
-.foot .wm .mk{width:.74em;height:.74em;flex:none}
-/* the wordmark is a quiet watermark, not a headline: name and dots at low contrast, the accent dot a little stronger */
-.foot .wm{color:rgba(237,238,240,.1)}
+/* the wordmark is a quiet watermark: the eight dots in flat grey; the accent dot and the name drawn as a
+   bitmap, --px cells split by paper-coloured gaps; effects/bitmap.js scatters the orange cells (--bits).
+   The name is grey above and orange in its lower ~30%, mixing through a dithered band. */
+.foot .wm{--px:2px;--grey:rgba(237,238,240,.14);--orange:rgba(238,96,24,.85);
+  --gaps:linear-gradient(90deg,transparent calc(100% - .5px),var(--color-paper) 0) 0 0/var(--px) var(--px),linear-gradient(transparent calc(100% - .5px),var(--color-paper) 0) 0 0/var(--px) var(--px);color:var(--grey)}
+.foot .wm .wmk{position:relative;flex:none;width:.74em;height:.74em}
+.foot .wm .mk{width:100%;height:100%}
 .foot .wm .mk .d{fill:currentColor}
-.foot .wm .mk .a{opacity:.45}
+.foot .wm .mk .a{opacity:0}
+.foot .wm .wmk i{position:absolute;left:72.67%;top:6%;width:21.33%;height:21.33%;border-radius:50%;background:var(--gaps),var(--bits,linear-gradient(var(--orange),var(--orange))),linear-gradient(var(--grey),var(--grey))}
+.foot .wm .wmk+span{color:transparent;background:var(--gaps),var(--bits,linear-gradient(transparent .54em,var(--orange) 0)),linear-gradient(var(--grey),var(--grey));-webkit-background-clip:text;background-clip:text;padding-bottom:.25em;margin-bottom:-.25em}
 .foot .bar{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:13px;color:var(--color-ink-faint)}
 .foot .bar nav{display:flex;gap:28px}
 .foot .bar nav a{color:var(--color-ink-faint)}
@@ -675,7 +681,7 @@ section:not(.run) .shot *{animation-play-state:paused!important}
 [data-theme="light"] .ui{box-shadow:var(--glass-shadow)}
 [data-theme="light"] .wire{stroke:rgba(60,40,20,.18)}[data-theme="light"] .node{fill:var(--color-ink)}
 [data-theme="light"] .mk .d{fill:var(--color-ink)}
-[data-theme="light"] .foot .wm{color:rgba(22,23,27,.07)}
+[data-theme="light"] .foot .wm{--grey:rgba(22,23,27,.1)}
 [data-theme="light"] .hdl,[data-theme="light"] .phc,[data-theme="light"] .hgv{background:rgba(255,255,255,.55);border-color:rgba(17,25,48,.08)}
 [data-theme="light"] .pkn{border-top-color:rgba(17,25,48,.07)}
 [data-theme="light"] .awr{border-top-color:rgba(17,25,48,.06)}
