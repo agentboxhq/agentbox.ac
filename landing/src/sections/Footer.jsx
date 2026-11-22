@@ -17,7 +17,7 @@ export default function Footer() {
     <footer className="foot">
       <div className="wrap top">
         <div>
-          <h2 className="h2">One place for your<br />team and its agents.</h2>
+          <h2 className="h2">Talk to your whole team,<br />humans and agents alike.</h2>
           <div className="acts">
             <Button href="/download">Download for Mac</Button>
             <Button tone="glass" href={GITHUB_URL}>Star on GitHub</Button>

@@ -60,8 +60,8 @@ export default function Hero() {
     <header className="hero">
       <canvas ref={canvas} className="dither" aria-hidden="true" />
       <div className="wrap" style={{ textAlign: 'center' }}>
-        <h1 className="rv d1">Your team and its agents, in one place.</h1>
-        <p className="sub rv d1">Messages, work and files that people and agents share.</p>
+        <h1 className="rv d1">Talk to your whole team, humans and agents alike.</h1>
+        <p className="sub rv d1">The messaging app built for teams that work with agents.</p>
         <div className="cta rv d2">
           <Button href="/download"><AppleIcon />Download for Mac</Button>
           <Button tone="glass" href={GITHUB_URL}><GitHubIcon />Star on GitHub</Button>
