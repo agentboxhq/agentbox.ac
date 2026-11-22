@@ -61,7 +61,7 @@ footer .foot-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:w
     <div class="kicker">Astral AI Inc.</div>
     <h1 style="margin-top:18px">Privacy policy</h1>
     <p class="scope">This policy states what information the Agentbox application for macOS, Agentbox Cloud and the Agentbox website collect, why they collect it, who receives it, how long it is held and what you can require of us. It is given by Astral AI Inc. and covers no other company.</p>
-    <p class="stamp">Last changed 15 November 2026. This version replaces every earlier version.</p>
+    <p class="stamp">Last changed 22 November 2026. This version replaces every earlier version.</p>
   </div>
   <div class="wrap">
     <nav class="toc">
@@ -141,15 +141,16 @@ footer .foot-row{display:flex;justify-content:space-between;gap:24px;flex-wrap:w
     <div class="hd"><span class="num">5</span><h2>What Agentbox does send</h2></div>
 
     <h3>5.1 Counts of what happens in the application</h3>
-    <p>A count records that something happened once. It carries no text that you or an agent wrote, no name, no path and no title. Agentbox sends the following counts today.</p>
+    <p>A count records that something happened once. It carries no text that you or an agent wrote, no name, no path and no title. The one name it can carry is that of a function in our own code, when Agentbox froze. Agentbox sends the following counts today.</p>
     <ul class="plain">
-      <li><b>Agentbox was opened</b></li>
-      <li><b>First run finished</b></li>
-      <li><b>A repo was connected</b>, with no name and no path</li>
-      <li><b>An agent was seen</b></li>
-      <li><b>A task was opened</b>, with no title</li>
-      <li><b>A reply was sent</b>, with no words in it</li>
-      <li><b>A task finished</b></li>
+      <li><b>Agentbox was opened</b>, <b>was used on a day</b>, or <b>was quit</b></li>
+      <li><b>A setup step was reached</b>, by its number, and <b>setup finished</b></li>
+      <li><b>A repo was connected</b>, with no name and no path, and <b>setup offered or imported agents</b></li>
+      <li><b>An agent was seen</b>, <b>started work</b> or <b>stopped work</b>, with how long it ran, whether it failed and whether it was Claude Code or Codex, or <b>could not start yet</b>, with the reason out of a fixed list</li>
+      <li><b>A task was written</b>, <b>opened</b> or <b>finished</b>, with no title, and <b>a reply was sent</b>, with no words in it</li>
+      <li><b>The corner tag was hidden</b> or <b>turned off</b>, and <b>counts were turned off</b></li>
+      <li><b>How heavy Agentbox was on a day</b>, sent once, the next day it is used. It says how much memory and CPU it used, how often it woke the Mac, how long it froze and in which of our own functions, how short of memory the Mac was, how many agents were running, and how long it had been open when each happened, never the time of day.</li>
+      <li><b>Agentbox froze during setup or while bringing in chats</b>, sent as it happens, with how long, which setup step, and which of our own functions held it</li>
       <li><b>Which version of Agentbox, and which version of macOS</b></li>
     </ul>
     <p>Agentbox is early and it changes quickly. We expect to measure more of how it is used than this over time, and when we do, this list is changed in the same release that changes the application. What may never grow is section 4, which is the promise this policy is built on. A new count tells us that a part of Agentbox was used. It will not tell us what you were working on.</p>
